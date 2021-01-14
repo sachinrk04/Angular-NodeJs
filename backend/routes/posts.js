@@ -58,6 +58,7 @@ router.put("/:id", multer({storage: storage}).single("image"), (req, res, next) 
     content: req.body.content,
     imagePath: imagePath
   });
+  console.log("File-post-->", post)
   Post.updateOne({ _id: req.params.id }, post).then(result => {
     res.status(200).json({ message: 'Update successfully'});
   });
